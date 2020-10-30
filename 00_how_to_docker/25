@@ -1,0 +1,6 @@
+# List all the services of the local swarm.
+
+docker service ls
+
+# docker service ps orbital-command
+# docker service inspect -f {{.Spec.TaskTemplate.ContainerSpec.Env}} orbital-command
