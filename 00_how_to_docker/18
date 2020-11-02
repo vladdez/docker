@@ -1,3 +1,7 @@
 #Relaunch the overlord container.
 
 docker restart overlord
+
+# kill our nginx to see restsrting nginx
+# docker exec -it overlord /bin/sh -c "kill 1"
+# docker inspect -f '{{.RestartCount}}' overlord
