@@ -1,10 +1,3 @@
-# docker build -t ex03 .
-# docker run -it --rm -p 8080:80 -p 8022:22 -p 8443:8443 --privileged ex03
-# docker run -it --rm -p 80:80 -p 7722:22 -p 443:443 --privileged ex03
-# ssh -T -p 8022 git@192.168.99.106
-# git -c http.sslVerify=false clone https://192.168.99.106:8443/vovan/awe.git
-# git clone ssh://git@192.168.99.106:8022/vovan/awe.git
-
 FROM ubuntu:18.04
 
 RUN apt-get update && \
@@ -35,3 +28,9 @@ RUN mkdir -p /etc/gitlab/ssl && \
 RUN mkdir -p /run/sshd
 
 ENTRYPOINT service ssh start && (/opt/gitlab/embedded/bin/runsvdir-start &)  && /usr/sbin/sshd &&  gitlab-ctl reconfigure && tail -f /dev/null
+# docker build -t ex03 .
+# docker run -it --rm -p 8080:80 -p 8022:22 -p 8443:8443 --privileged ex03
+# docker run -it --rm -p 80:80 -p 7722:22 -p 443:443 --privileged ex03
+# ssh -T -p 8022 git@192.168.99.106
+# git -c http.sslVerify=false clone https://192.168.99.106:8443/vovan/awe.git
+# git clone ssh://git@192.168.99.106:8022/vovan/awe.git

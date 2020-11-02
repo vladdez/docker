@@ -1,6 +1,3 @@
-# docker build -t 04_r_env .
-# docker run -it 04_r_env
-
 FROM ubuntu:bionic
 
 LABEL org.label-schema.license="GPL-2.0" \
@@ -62,4 +59,5 @@ RUN apt-get update \
 
 CMD ["bash"]
 
-
+# docker build -t 04_r_env .
+# docker run -it 04_r_env

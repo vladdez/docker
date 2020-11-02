@@ -1,4 +1,4 @@
-#Print the environment variables of the spawning-pool container in one command, to be sure that you have configured your container properly.
+# Print the environment variables of the spawning-pool container in one command, to be sure that you have configured your container properly.
 
 # docker inspect spawning-pool
 # docker inspect -f '{{.HostConfig.RestartPolicy}}' spawning-pool
